@@ -1,7 +1,10 @@
 import mongoose from "mongoose"
+import dotenv from 'dotenv';
 
-const { MONGODB_URI } = process.env;
+dotenv.config(); 
+
+const MONGODB_URI = process.env.MONGODB_URI;
 
 export const connectDB = async () => {
-    await mongoose.connect("mongodb+srv://dapos:S3qIs41KEUcrVw33@cluster0.jehydsi.mongodb.net/panache?retryWrites=true&w=majority").then(()=>console.log("DB connected"))
+    await mongoose.connect(MONGODB_URI).then(()=>console.log("DB connected"))
 }

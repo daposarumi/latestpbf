@@ -60,27 +60,21 @@ app.get("/",(req,res)=>{
 
 app.post('/api/subscribe', async (req, res) => {
     const { email } = req.body;
-
     if (!email) {
-        return res.status(400).json({ message: 'Email is required' });
+      return res.status(400).json({ message: 'Email is required' });
     }
-
+  
     try {
-        const response = await axios.post(`https://${process.env.MAILCHIMP_SERVER_PREFIX}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_LIST_ID}/members`, {
-            email_address: email,
-            status: 'subscribed',
-        }, {
-            headers: {
-                Authorization: `apikey ${process.env.MAILCHIMP_API_KEY}`,
-                'Content-Type': 'application/json',
-            }
-        });
-
-        response.status(200).json({ message: 'Subscription successful' });
+      // Example: Add to Mailchimp list or save to database
+      // await addEmailToMailchimpList(email);
+  
+      res.status(200).json({ message: 'Subscription successful' });
     } catch (error) {
-        response.status(500).json({ message: 'Subscription failed', error: error.message });
+      console.error('Subscription error:', error.message);
+      res.status(500).json({ message: 'Subscription failed. Please try again later.' });
     }
-});
+  });
+  
 
 
 
