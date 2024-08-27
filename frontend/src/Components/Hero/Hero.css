@@ -1,0 +1,60 @@
+@font-face {
+    font-family: "Prida01";
+    src: url("https://fontsforyou.com/fonts/p/Prida01.ttf");
+}
+h1 {
+    font-family: "Prida01";
+    font-weight: bolder;
+    font-size: 70px;
+    padding-top: 40px;
+}
+@media(max-width:1024px){
+    .hero-button{
+        padding: 10px 30px;
+        margin-top: 28px;
+        background: teal;
+        border-radius: 30px;
+        font-weight: 450;
+        color: white;
+    }
+    h1{
+        padding-top: 80px;
+        font-size: 55px;
+    }
+}
+@media(max-width:800px){
+    h1{
+        font-size: 40px;
+        padding-top: 60px;
+    }
+    p{
+        font-size: 14px;
+    }
+    .hero-button{
+        padding: 7px 28px;
+        font-size: 16px;
+        margin-top: 28px;
+        background: teal;
+        border-radius: 30px;
+        font-weight: 400;
+        color: white;
+    }
+}
+@media(max-width:500px){
+    .hero{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 55px;
+        text-align: center;
+    }
+    p{
+        text-align: center;
+    }
+    .hero-button{
+        align-content: center;
+        display: block;
+        margin: 40px auto;
+        padding: 10px 28px;
+    }
+}
