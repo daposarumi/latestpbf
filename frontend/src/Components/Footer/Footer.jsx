@@ -31,8 +31,11 @@ export const Footer = () => {
             <div className="footer-copyright">
                 <hr />
                 <p>
+
                     Copyright &copy;2025, PBF - All Rights Reserved
                     {/* Copyright &copy;{new Date().getFullYear()}, PBF - All Rights Reserved */}
+
+
                 </p>
             </div>
         </div>
